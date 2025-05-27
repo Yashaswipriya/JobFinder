@@ -1,0 +1,14 @@
+# Ignore node_modules and build folders in both client and server
+client/node_modules/
+client/.next/
+client/.env
+client/dist/
+
+server/node_modules/
+server/.env
+server/dist/
+
+# Ignore OS or editor-specific files
+.DS_Store
+*.log
+.env
