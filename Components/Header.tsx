@@ -8,7 +8,7 @@ import { LogIn, UserPlus } from 'lucide-react';
 import Profile from './Profile';
 
 function Header() {
-    const {isAuthenticated,user} = useGlobalContext();
+    const {isAuthenticated, userProfile} = useGlobalContext();
     const pathname = usePathname();
   return (
     
@@ -42,16 +42,16 @@ function Header() {
         {isAuthenticated ?(
            <Profile/>) : (
             <div className='flex items-center gap-6'>
-                <Link href={'http://localhost:8000/login'}
+                <a href={'http://localhost:8000/login'}
                 className='rounded-md border flex items-center gap-4 bg-[#7263f3] border-[#7263f3] text-white py-2 px-6 hover:bg-[#7263f3]/90 transition-all duration-200 ease-in-out'
                 >
                 <LogIn className='w-4 h-4'/>
-                Login</Link>
-                 <Link href={'http://localhost:8000/login'}
+                Login</a>
+                 <a href={'http://localhost:8000/login'}
                 className='rounded-md border flex items-center gap-4 border-[#7263F3] text-[#7263F3] py-2 px-6 hover:bg-[#7263F3]/10 transition-all duration-200 ease-in-out'
                 >
                 <UserPlus className='w-4 h-4'/>
-                Register</Link>
+                Register</a>
             </div>)}
       </div>
     </header>

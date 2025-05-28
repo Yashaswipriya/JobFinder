@@ -80,7 +80,7 @@ export const createJob = asyncHandler(async (req, res) => {
 //get Jobs
 export const getJobs = asyncHandler(async (req, res) => {
     try{
-        const jobs = await Jon.find({}).populate(
+        const jobs = await Job.find({}).populate(
             "createdBy",
             "name profilePicture"
         ).sort({createdAt:-1});//sort by latest job
