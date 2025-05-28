@@ -16,7 +16,7 @@ export const GlobalContextProvider = ({children}) => {
             setLoading(true);
         try {
             const res = await axios.get('/api/v1/check-auth');
-            console.log(res.data);
+            console.log("OUR DATA ++ " ,res.data);
             setIsAuthenticated(res.data.isAuthenticated);
             setAuth0User(res.data.user);
             setLoading(false);
@@ -41,8 +41,8 @@ export const GlobalContextProvider = ({children}) => {
     };
 
     useEffect(() => {
-        if (isAuthenticated && auth0User) {
-            console.log("Auth0 User Sub:", auth0User?.sub);
+        if (isAuthenticated && auth0User && auth0User.sub) {
+            console.log("Auth0 User Sub:", auth0User.sub);
             getUserProfile(auth0User.sub);
         }
     }, [isAuthenticated, auth0User]);
