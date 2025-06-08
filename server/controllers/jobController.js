@@ -170,6 +170,7 @@ export const applyJob = asyncHandler(async (req, res) =>{
         });
     }
 });
+
 //like and unlike jobs
 export const likeJob = asyncHandler(async (req, res) => {
     try {

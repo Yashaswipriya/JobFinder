@@ -45,12 +45,12 @@ const JobSchema = new mongoose.Schema({
             ref: 'User',
         },
     ],
-    createdBy:[
+    createdBy:
         {
             type:mongoose.Schema.Types.ObjectId,
             ref: 'User',
         },
-    ],
+    
     applicants:[
         {
             type:mongoose.Schema.Types.ObjectId,

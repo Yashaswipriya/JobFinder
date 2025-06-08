@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Ignore node_modules and build folders in both client and server
 client/node_modules/
 client/.next/
@@ -13,7 +12,6 @@ server/dist/
 .DS_Store
 *.log
 .env
-=======
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -55,4 +53,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
->>>>>>> e777fd68ef2f2b4afc6ce2d359647c162b83e1d8
