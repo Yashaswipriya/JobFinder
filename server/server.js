@@ -11,6 +11,8 @@ import asyncHandler from 'express-async-handler';
 dotenv.config();
 console.log("ENV TEST:", process.env.SECRET, process.env.BASE_URL);
 const app = express();
+app.set('trust proxy', 1);
+
 const config = {
   authRequired: false,
   auth0Logout: true,
