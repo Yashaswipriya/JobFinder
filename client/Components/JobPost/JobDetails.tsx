@@ -1,13 +1,18 @@
 "use client";
 import { useGlobalContext } from '@/context/globalContext';
 import React from 'react'
-import ReactQuill from 'react-quill-new';
 import { Label } from '../ui/label';
 import 'react-quill-new/dist/quill.snow.css'; 
 import { Separator } from '@radix-ui/react-dropdown-menu';
 import { Input } from '../ui/input';
 import { Checkbox } from '../ui/checkbox';
+
+const ReactQuill = dynamic (() => import ("react-quill-new"),{
+  ssr: false,
+})
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
+import dynamic from 'next/dynamic';
+
 function MyEditor(){
   const {setJobDescription, jobDescription} = useGlobalContext();
   return(
