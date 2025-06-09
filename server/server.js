@@ -19,12 +19,27 @@ const config = {
   clientID: process.env.CLIENT_ID,
   issuerBaseURL: process.env.ISSUER_BASE_URL,
   routes:{
-    postLogoutRedirect:process.env.CLIENT_URL
+    postLogoutRedirect:process.env.CLIENT_URL,
+    callback: "/callback",
+    logout: "/logout",
+    login: "/login",
+  },
+
+  session:{
+    absoluteDuration: 30*24*60*60*1000,// 30 days
+    cookie:{
+        domain: "jobfinder-31ca.onrender.com",
+        secure:true,
+        sameSite: "None",
+    }
   }
 };
 app.use(cors({
     origin:process.env.CLIENT_URL,
-        credentials: true
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE' , 'OPTIONS'],
+        allowedHeaders: ["Content-Type" , "Authorization"],
+        exposedHeaders: ["set-cookie"],
 
 }));
 app.use(express.json());
