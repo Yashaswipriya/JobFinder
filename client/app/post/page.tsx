@@ -5,14 +5,14 @@ import { useGlobalContext } from '@/context/globalContext'
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react'
 
-function page() {
+function Page() {
   const {isAuthenticated,loading} = useGlobalContext();
   const router = useRouter();
    useEffect(() => {
     if (!loading && !isAuthenticated) {
       router.push("http://localhost:8000/login");
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated,loading,router]);
 
   return (
     <div>
@@ -27,4 +27,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

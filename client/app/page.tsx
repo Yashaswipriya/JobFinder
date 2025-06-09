@@ -1,6 +1,5 @@
 "use client";
 import Link from 'next/link';
-import { useGlobalContext } from '@/context/globalContext';
 import Header from '@/Components/Header';
 import { Input } from '@/Components/ui/input';
 import { Button } from '@/Components/ui/button';

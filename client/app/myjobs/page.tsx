@@ -8,7 +8,7 @@ import { Job } from '@/types/types';
 import { useRouter } from 'next/navigation';
 import React, { useEffect } from 'react'
 
-function page() {
+function Page() {
   const {userJobs, jobs} = useJobContext();
   const {isAuthenticated, loading, userProfile} = useGlobalContext();
   const [activeTab, setActiveTab] = React.useState("posts");
@@ -18,10 +18,10 @@ function page() {
 
   //redirect to login if not authenticated
    useEffect(() => {
-    if (!loading && !isAuthenticated) {
-      router.push("http://localhost:8000/login");
-    }
-  }, [isAuthenticated]);
+  if (!loading && !isAuthenticated) {
+    router.push("http://localhost:8000/login");
+  }
+}, [loading, isAuthenticated, router]);
 
 
   const likedJobs = jobs.filter((job:Job) => {
@@ -84,4 +84,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

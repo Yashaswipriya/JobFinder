@@ -1,7 +1,7 @@
 "use client";
 import Header from '@/Components/Header'
 import SearchForm from '@/Components/SearchForm';
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image';
 import { grid, list, table } from '@/utils/icons';
 import { useJobContext } from '@/context/jobsContext';
@@ -9,7 +9,7 @@ import JobCard from '@/Components/JobItem/JobCard';
 import { Job } from '@/types/types';
 import Filters from '@/Components/Filters';
 
-function page() {
+function Page() {
   const {jobs, filters} = useJobContext();
   const [columns,setColumns] = React.useState(3);
 
@@ -110,4 +110,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

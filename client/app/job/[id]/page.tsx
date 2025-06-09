@@ -6,7 +6,6 @@ import { Job } from '@/types/types';
 import { useParams, useRouter } from 'next/navigation';
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { Bookmark } from 'lucide-react';
 import { useGlobalContext } from '@/context/globalContext';
 import formatMoney from '@/utils/formatMoney';
 import { formatDates } from '@/utils/formatDates';
@@ -29,7 +28,7 @@ function Page() {
     if(job){
     setIsApplied(job.applicants.includes(userProfile._id));
     }
-   },[job])
+   },[job,userProfile._id])
 
     useEffect(() => {
     if (job){
@@ -93,11 +92,13 @@ function Page() {
                     className={`text-2xl ${
                         isLiked ? "text-[#7263f3]" : "text-gray-400"
                     }`}
-                    onClick={() =>{
-                        isAuthenticated
-                        ? handleLike(job._id)
-                        : router.push("http://localhost:8000/login");
-                    } } 
+                   onClick={() => {
+                        if (isAuthenticated) {
+                        handleLike(job._id);
+                        } else {
+                        router.push("http://localhost:8000/login");
+                        }
+                        }}
                     >
                         {isLiked ? bookmark : bookmarkEmpty}
                     </button>
