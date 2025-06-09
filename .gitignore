@@ -1,7 +1,7 @@
 # Ignore node_modules and build folders in both client and server
 client/node_modules/
 client/.next/
-client/.env.local
+client/.env
 client/dist/
 
 server/node_modules/
