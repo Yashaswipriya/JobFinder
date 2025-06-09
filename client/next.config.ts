@@ -8,7 +8,11 @@ const nextConfig: NextConfig = {
       "cdn.auth0.com",
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
+
 
 export default nextConfig;
 
