@@ -101,7 +101,7 @@ function JobCard({job, activeJob }: JobProps) {
           onClick={() => {
             isAuthenticated
               ? handleLike(job._id)
-              : router.push("https://localhost:8000/login");
+              : router.push("https://jobfinder-31ca.onrender.com/login");
           }}
         >
           {isLiked ? bookmark  : bookmarkEmpty}
