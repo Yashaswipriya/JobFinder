@@ -47,16 +47,6 @@ app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use(auth(config));
 
-app.get('/callback', async (req, res) => {
-  if (req.oidc.isAuthenticated()) {
-    await ensureUserInDB(req.oidc.user);
-    return res.redirect(process.env.CLIENT_URL);
-  } else {
-    return res.status(401).send('Not authenticated');
-  }
-});
-
-
 // function to check if user exists in the db
 const ensureUserInDB = asyncHandler(async(user) => {
     try {
