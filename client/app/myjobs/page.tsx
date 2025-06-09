@@ -19,7 +19,7 @@ function Page() {
   //redirect to login if not authenticated
    useEffect(() => {
   if (!loading && !isAuthenticated) {
-    router.push("http://localhost:8000/login");
+    router.push("https://jobfinder-31ca.onrender.com/login");
   }
 }, [loading, isAuthenticated, router]);
 

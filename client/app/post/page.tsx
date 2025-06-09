@@ -10,7 +10,7 @@ function Page() {
   const router = useRouter();
    useEffect(() => {
     if (!loading && !isAuthenticated) {
-      router.push("http://localhost:8000/login");
+      router.push("https://jobfinder-31ca.onrender.com/login");
     }
   }, [isAuthenticated,loading,router]);
 

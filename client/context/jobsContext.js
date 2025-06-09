@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 const JobsContext = createContext();
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://jobfinder-31ca.onrender.com';
 axios.defaults.withCredentials = true;
 export const JobsContextProvider = ({children}) => {
     const {userProfile} = useGlobalContext();

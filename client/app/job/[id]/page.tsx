@@ -96,7 +96,7 @@ function Page() {
                         if (isAuthenticated) {
                         handleLike(job._id);
                         } else {
-                        router.push("http://localhost:8000/login");
+                        router.push("https://jobfinder-31ca.onrender.com/login");
                         }
                         }}
                     >
@@ -160,7 +160,7 @@ function Page() {
                             
                         }
                     }else{
-                        router.push("http://localhost:8000/login")
+                        router.push("https://jobfinder-31ca.onrender.com/login")
                     }
                 }}
                 >

@@ -2,7 +2,7 @@ import React, {createContext,useState,useEffect} from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 const GlobalContext = createContext();
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = 'https://jobfinder-31ca.onrender.com';
 axios.defaults.withCredentials = true;
 export const GlobalContextProvider = ({children}) => {
     
