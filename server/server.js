@@ -35,6 +35,10 @@ const config = {
     }
   }
 };
+
+console.log("BASE_URL:", process.env.BASE_URL);
+console.log("CLIENT_URL:", process.env.CLIENT_URL);
+
 app.use(cors({
     origin:process.env.CLIENT_URL,
         credentials: true,
