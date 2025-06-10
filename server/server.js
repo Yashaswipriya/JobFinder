@@ -12,6 +12,14 @@ dotenv.config();
 console.log("ENV TEST:", process.env.SECRET, process.env.BASE_URL);
 const app = express();
 app.set('trust proxy', 1);
+app.use(cors({
+    origin:process.env.CLIENT_URL,
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE' , 'OPTIONS'],
+        allowedHeaders: ["Content-Type" , "Authorization"],
+        exposedHeaders: ["set-cookie"],
+
+}));
 
 const config = {
   authRequired: false,
@@ -39,14 +47,6 @@ const config = {
 console.log("BASE_URL:", process.env.BASE_URL);
 console.log("CLIENT_URL:", process.env.CLIENT_URL);
 
-app.use(cors({
-    origin:process.env.CLIENT_URL,
-        credentials: true,
-        methods: ['GET', 'POST', 'PUT', 'DELETE' , 'OPTIONS'],
-        allowedHeaders: ["Content-Type" , "Authorization"],
-        exposedHeaders: ["set-cookie"],
-
-}));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
