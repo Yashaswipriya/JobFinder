@@ -30,7 +30,7 @@ export const GlobalContextProvider = ({children}) => {
         const checkAuth = async () => {
             setLoading(true);
         try {
-            const res = await axios.get('/api/v1/check-auth');
+            const res = await axios.get('/api/v1/check-auth',{withCredentials: true});
             console.log("OUR DATA ++ " ,res.data);
             setIsAuthenticated(res.data.isAuthenticated);
             setAuth0User(res.data.user);
@@ -47,7 +47,7 @@ export const GlobalContextProvider = ({children}) => {
 
     const getUserProfile = async (id) => {
         try {
-            const res = await axios.get(`/api/v1/user/${id}`);
+            const res = await axios.get(`/api/v1/user/${id}`,{withCredentials: true});
             setUserProfile(res.data);
             console.log("User Profile Fetched:", res.data);
         } catch (error) {
